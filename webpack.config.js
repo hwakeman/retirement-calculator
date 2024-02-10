@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/script.js',
   devtool: 'inline-source-map',
   output: {
     filename: 'bundle.js',
@@ -32,7 +32,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      favicon: './src/images/favicon.png',
+      favicon: './src/images/cash.svg',
       template: './src/index.html',
       filename: 'index.html',
       inject: 'body',
