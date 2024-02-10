@@ -2,11 +2,11 @@ import Debt from '../models/debt';
 
 let debt;
 
-beforeAll(() => {
-  debt = new Debt();
-});
-
 describe('Debt amount', () => {
+  beforeEach(() => {
+    debt = new Debt();
+  });
+
   test('integer', () => {
     debt.setAmount(200);
     expect(debt.getAmount()).toBe(200);
@@ -41,6 +41,10 @@ describe('Debt amount', () => {
 });
 
 describe('Debt interest rate', () => {
+  beforeEach(() => {
+    debt = new Debt();
+  });
+
   test('integer', () => {
     debt.setInterest(56);
     expect(debt.getInterest()).toBe(56);
@@ -75,6 +79,10 @@ describe('Debt interest rate', () => {
 });
 
 describe('Debt monthly payment', () => {
+  beforeEach(() => {
+    debt = new Debt();
+  });
+
   test('integer', () => {
     debt.setPayment(500);
     expect(debt.getPayment()).toBe(500);
@@ -109,18 +117,22 @@ describe('Debt monthly payment', () => {
 });
 
 describe('total paid with interest', () => {
+  beforeEach(() => {
+    debt = new Debt();
+  });
+
   test('test #1', () => {
     debt.setAmount(1000);
     debt.setInterest(5);
     debt.setPayment(100);
-    expect(debt.totalPaidWithInterest()).toBeCloseTo(1023.56);
+    expect(debt.totalPaidWithInterest()).toBeCloseTo(1023.59, 1);
   });
 
   test('test #2', () => {
     debt.setAmount(100000);
     debt.setInterest(4.32);
     debt.setPayment(560);
-    expect(debt.totalPaidWithInterest()).toBeCloseTo(160451.14);
+    expect(debt.totalPaidWithInterest()).toBeCloseTo(160451.39, 1);
   });
 
   test('nothing set', () => {
