@@ -1,5 +1,11 @@
 import './styles.css';
 
 import header from './components/header';
+import mainContent from './components/mainContent';
 
-document.body.appendChild(header());
+const content = document.createElement('div');
+
+content.appendChild(header());
+content.appendChild(mainContent());
+content.classList.add('content');
+document.body.appendChild(content);
