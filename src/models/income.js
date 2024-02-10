@@ -71,7 +71,6 @@ export default class income {
 
     for (let i = 0; i < years; i += 1) {
       totalSalary += this.salary * (1 + this.salaryIncrease / 100) ** i;
-      console.log(totalSalary);
     }
 
     // Last year isn't a full year, so we need to calculate the fraction of the year
@@ -86,13 +85,6 @@ export default class income {
         (1 + this.getSalaryIncrease() / 100) ** years *
         daysAway) /
       365;
-
-    console.log(
-      (this.getSalary() *
-        (1 + this.getSalaryIncrease() / 100) ** years *
-        daysAway) /
-        365,
-    );
 
     return totalSalary;
   }
