@@ -1,3 +1,5 @@
+import addButton from './form/addButton';
+import sectionLabel from './form/sectionLabel';
 import separater from './form/separater';
 
 export default function form() {
@@ -22,10 +24,15 @@ export default function form() {
 
   container.appendChild(separater());
 
-  const incomeLabel = document.createElement('h3');
-  incomeLabel.classList.add('section-label');
-  incomeLabel.textContent = 'Income sources';
-  container.appendChild(incomeLabel);
+  container.appendChild(sectionLabel('Income sources'));
+
+  container.appendChild(addButton());
+
+  container.appendChild(separater());
+
+  container.appendChild(sectionLabel('Debts'));
+
+  container.appendChild(addButton());
 
   container.appendChild(separater());
 

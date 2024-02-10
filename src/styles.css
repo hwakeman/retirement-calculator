@@ -46,7 +46,8 @@ main {
 }
 
 .retirement-form label,
-.separater {
+.separater,
+.add-btn {
     margin-bottom: 15px;
 }
 
@@ -72,15 +73,26 @@ main {
     background-color: grey;
 }
 
+.add-btn {
+    background-color: gray;
+    color: white;
+}
+
 .submit-btn {
     background-color: orange;
+}
+
+.add-btn,
+.submit-btn {
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
     transition: scale .2s ease-in-out;
 }
 
+.add-btn:hover,
 .submit-btn:hover {
+    transition: scale .2s ease-in-out;
     scale: 1.1;
 }
 
