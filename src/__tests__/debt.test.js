@@ -7,14 +7,14 @@ beforeAll(() => {
 });
 
 describe('Debt amount', () => {
-  test('test #1', () => {
+  test('integer', () => {
     debt.setAmount(200);
     expect(debt.getAmount()).toBe(200);
   });
 
-  test('test #2', () => {
-    debt.setAmount(100000);
-    expect(debt.getAmount()).toBe(100000);
+  test('float', () => {
+    debt.setAmount(30000.17);
+    expect(debt.getAmount()).toBe(30000.17);
   });
 
   test('incorrect type', () => {
