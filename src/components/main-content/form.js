@@ -1,5 +1,6 @@
-import addButton from './form/addButton';
-import sectionLabel from './form/sectionLabel';
+import section from './form/section';
+import addButton from './form/section/addButton';
+import sectionLabel from './form/section/sectionLabel';
 import separater from './form/separater';
 
 export default function form() {
@@ -43,15 +44,11 @@ export default function form() {
 
   container.appendChild(separater());
 
-  container.appendChild(sectionLabel('Income sources'));
-
-  container.appendChild(addButton());
+  container.appendChild(section('income'));
 
   container.appendChild(separater());
 
-  container.appendChild(sectionLabel('Debts'));
-
-  container.appendChild(addButton());
+  container.appendChild(section('debts'));
 
   container.appendChild(separater());
 
