@@ -46,6 +46,10 @@ export default function form() {
 
   container.appendChild(separater());
 
+  container.appendChild(section('savings'));
+
+  container.appendChild(separater());
+
   container.appendChild(section('debts'));
 
   container.appendChild(separater());

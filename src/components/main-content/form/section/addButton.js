@@ -1,5 +1,6 @@
 import incomeItem from './section-items/incomeItem.js';
 import debtItem from './section-items/debtItem.js';
+import savingsItem from './section-items/savingsItem.js';
 
 export default function addButton(label) {
   const button = document.createElement('button');
@@ -19,6 +20,13 @@ export default function addButton(label) {
       document
         .getElementsByClassName(`${label}-items`)[0]
         .appendChild(debtItem());
+    };
+  } else if (label === 'savings') {
+    button.onclick = function (event) {
+      event.preventDefault();
+      document
+        .getElementsByClassName(`${label}-items`)[0]
+        .appendChild(savingsItem());
     };
   }
 
