@@ -45,11 +45,40 @@ main {
     margin-block: 20px;
 }
 
+.location-container {
+    width: 100%;
+}
+
+.location-label {
+
+    width: 100%;
+    border-radius: 5px;
+}
+
+.location-input {
+    width: 100%;
+}
+
+.location-options {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.location-option {
+    background-color: white;
+    border-radius: 5px;
+}
+
 .retirement-form label,
 .separater,
-.add-btn {
+.add-btn,
+.location-options {
     margin-bottom: 15px;
 }
+
+
 
 .retirement-form input,
 .retirement-form select {

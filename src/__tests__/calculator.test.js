@@ -25,23 +25,23 @@ describe('Calculator age', () => {
 
   test('incorrect type', () => {
     expect(() => {
-      calculator.setPredictedInflation(null);
+      calculator.setAge(null);
     }).toThrow('Type Error');
 
     expect(() => {
-      calculator.setPredictedInflation('incorrect type');
+      calculator.setAge('incorrect type');
     }).toThrow('Type Error');
 
     expect(() => {
-      calculator.setPredictedInflation(false);
+      calculator.setAge(false);
     }).toThrow('Type Error');
 
     expect(() => {
-      calculator.setPredictedInflation([]);
+      calculator.setAge([]);
     }).toThrow('Type Error');
 
     expect(() => {
-      calculator.setPredictedInflation({});
+      calculator.setAge({});
     }).toThrow('Type Error');
   });
 });
@@ -80,35 +80,77 @@ describe('Calculator predicted inflation', () => {
   });
 });
 
-describe('Calculator retirement lifestyle', () => {
+describe('Calculator lifestyle', () => {
   test('default value', () => {
-    expect(calculator.getRetirementLifestyle()).toBe('moderate');
+    expect(calculator.getLifestyle()).toBe('moderate');
   });
 
   test('changed value', () => {
-    calculator.setRetirementLifestyle('luxurious');
-    expect(calculator.getRetirementLifestyle()).toBe('luxurious');
+    calculator.setLifestyle('luxurious');
+    expect(calculator.getLifestyle()).toBe('luxurious');
   });
 
   test('incorrect type', () => {
     expect(() => {
-      calculator.setPredictedInflation(null);
+      calculator.setLifestyle(1);
     }).toThrow('Type Error');
 
     expect(() => {
-      calculator.setPredictedInflation('incorrect type');
+      calculator.setLifestyle(5.7);
     }).toThrow('Type Error');
 
     expect(() => {
-      calculator.setPredictedInflation(false);
+      calculator.setLifestyle(null);
     }).toThrow('Type Error');
 
     expect(() => {
-      calculator.setPredictedInflation([]);
+      calculator.setLifestyle(false);
     }).toThrow('Type Error');
 
     expect(() => {
-      calculator.setPredictedInflation({});
+      calculator.setLifestyle([]);
+    }).toThrow('Type Error');
+
+    expect(() => {
+      calculator.setLifestyle({});
+    }).toThrow('Type Error');
+  });
+});
+
+describe('Calculator location', () => {
+  test('test #1', () => {
+    calculator.setLocation('New York');
+    expect(calculator.getLocation()).toBe('New York');
+  });
+
+  test('test #2', () => {
+    calculator.setLocation('Chicago');
+    expect(calculator.getLocation()).toBe('Chicago');
+  });
+
+  test('incorrect type', () => {
+    expect(() => {
+      calculator.setLocation(1);
+    }).toThrow('Type Error');
+
+    expect(() => {
+      calculator.setLocation(5.7);
+    }).toThrow('Type Error');
+
+    expect(() => {
+      calculator.setLocation(null);
+    }).toThrow('Type Error');
+
+    expect(() => {
+      calculator.setLocation(false);
+    }).toThrow('Type Error');
+
+    expect(() => {
+      calculator.setLocation([]);
+    }).toThrow('Type Error');
+
+    expect(() => {
+      calculator.setLocation({});
     }).toThrow('Type Error');
   });
 });

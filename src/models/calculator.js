@@ -2,7 +2,7 @@ export default class Calculator {
   constructor() {
     this.age = 0;
     this.expectedInflation = 0;
-    this.retirementLifestyle = 'moderate';
+    this.lifestyle = 'moderate';
     this.incomeList = [];
     this.savingsList = [];
     this.debtList = [];
@@ -30,15 +30,26 @@ export default class Calculator {
     this.expectedInflation = expectedInflation;
   }
 
-  getRetirementLifestyle() {
-    return this.retirementLifestyle;
+  getLifestyle() {
+    return this.lifestyle;
   }
 
-  setRetirementLifestyle(retirementLifestyle) {
-    if (typeof retirementLifestyle !== 'string') {
+  setLifestyle(lifestyle) {
+    if (typeof lifestyle !== 'string') {
       throw new TypeError('Type Error');
     }
-    this.retirementLifestyle = retirementLifestyle;
+    this.lifestyle = lifestyle;
+  }
+
+  getLocation() {
+    return this.location;
+  }
+
+  setLocation(location) {
+    if (typeof location !== 'string') {
+      throw new TypeError('Type Error');
+    }
+    this.location = location;
   }
 
   addIncome(income) {
