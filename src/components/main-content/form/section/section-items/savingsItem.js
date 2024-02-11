@@ -9,6 +9,12 @@ export default function savingsItem() {
   amountInput.type = 'number';
   amountLabel.appendChild(amountInput);
 
+  const monthlyContributionLabel = document.createElement('label');
+  monthlyContributionLabel.textContent = 'Monthly Contribution: ';
+  const monthlyContributionInput = document.createElement('input');
+  monthlyContributionInput.type = 'number';
+  monthlyContributionLabel.appendChild(monthlyContributionInput);
+
   const expectedReturnLabel = document.createElement('label');
   expectedReturnLabel.textContent = 'Expected return rate: ';
   const expectedReturnInput = document.createElement('input');
@@ -28,6 +34,7 @@ export default function savingsItem() {
   taxAdvantagedLabel.appendChild(taxAdvantagedInput);
 
   container.appendChild(amountLabel);
+  container.appendChild(monthlyContributionLabel);
   container.appendChild(expectedReturnLabel);
   container.appendChild(taxAdvantagedLabel);
   return container;

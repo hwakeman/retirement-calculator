@@ -40,6 +40,44 @@ describe('Savings amount', () => {
   });
 });
 
+describe('Savings monthly contribution', () => {
+  beforeEach(() => {
+    savings = new Savings();
+  });
+
+  test('integer', () => {
+    savings.setMonthlyContribution(500);
+    expect(savings.getMonthlyContribution()).toBe(500);
+  });
+
+  test('float', () => {
+    savings.setMonthlyContribution(725.13);
+    expect(savings.getMonthlyContribution()).toBe(725.13);
+  });
+
+  test('incorrect type', () => {
+    expect(() => {
+      savings.setMonthlyContribution(null);
+    }).toThrow('Type Error');
+
+    expect(() => {
+      savings.setMonthlyContribution('incorrect type');
+    }).toThrow('Type Error');
+
+    expect(() => {
+      savings.setMonthlyContribution(false);
+    }).toThrow('Type Error');
+
+    expect(() => {
+      savings.setMonthlyContribution([]);
+    }).toThrow('Type Error');
+
+    expect(() => {
+      savings.setMonthlyContribution({});
+    }).toThrow('Type Error');
+  });
+});
+
 describe('Savings expected return', () => {
   beforeEach(() => {
     savings = new Savings();

@@ -1,6 +1,7 @@
 export default class savings {
   constructor() {
     this.amount = 0;
+    this.monthlyContribution = 0;
     this.expectedReturn = 0;
     this.taxAdvantaged = false;
   }
@@ -14,6 +15,17 @@ export default class savings {
       throw new TypeError('Type Error');
     }
     this.amount = amount;
+  }
+
+  getMonthlyContribution() {
+    return this.monthlyContribution;
+  }
+
+  setMonthlyContribution(monthlyContribution) {
+    if (typeof monthlyContribution !== 'number') {
+      throw new TypeError('Type Error');
+    }
+    this.monthlyContribution = monthlyContribution;
   }
 
   getExpectedReturn() {
