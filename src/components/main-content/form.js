@@ -1,6 +1,4 @@
 import section from './form/section';
-import addButton from './form/section/addButton';
-import sectionLabel from './form/section/sectionLabel';
 import separater from './form/separater';
 
 export default function form() {
