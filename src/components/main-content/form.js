@@ -22,6 +22,25 @@ export default function form() {
   expectedInflationLabel.appendChild(expectedInflationInput);
   container.appendChild(expectedInflationLabel);
 
+  const retirementLifestyleLabel = document.createElement('label');
+  retirementLifestyleLabel.textContent = 'Retirement Lifestyle:';
+  const retirementLifestyleInput = document.createElement('select');
+  const retirementLifestyleOptions = [
+    'Barebones',
+    'Frugal',
+    'Moderate',
+    'Comfortable',
+    'Luxurious',
+  ];
+  for (let i = 0; i < retirementLifestyleOptions.length; i += 1) {
+    const option = document.createElement('option');
+    option.value = retirementLifestyleOptions[i];
+    option.textContent = retirementLifestyleOptions[i];
+    retirementLifestyleInput.appendChild(option);
+  }
+  retirementLifestyleLabel.appendChild(retirementLifestyleInput);
+  container.appendChild(retirementLifestyleLabel);
+
   container.appendChild(separater());
 
   container.appendChild(sectionLabel('Income sources'));
