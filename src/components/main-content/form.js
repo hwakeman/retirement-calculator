@@ -1,29 +1,36 @@
 import section from './form/section';
 import separater from './form/separater';
+import results from './results';
 
 export default function form() {
   const container = document.createElement('form');
   container.classList.add('retirement-form');
 
   const ageLabel = document.createElement('label');
+  ageLabel.classList.add('age-label');
   ageLabel.textContent = 'Age:';
   const ageInput = document.createElement('input');
+  ageInput.classList.add('age-input');
   ageInput.type = 'number';
   ageInput.max = 130;
   ageLabel.appendChild(ageInput);
   container.appendChild(ageLabel);
 
   const expectedInflationLabel = document.createElement('label');
+  expectedInflationLabel.classList.add('expected-inflation-label');
   expectedInflationLabel.textContent = 'Expected Inflation Rate:';
   const expectedInflationInput = document.createElement('input');
+  expectedInflationInput.classList.add('expected-inflation-input');
   expectedInflationInput.type = 'number';
   expectedInflationInput.max = 130;
   expectedInflationLabel.appendChild(expectedInflationInput);
   container.appendChild(expectedInflationLabel);
 
   const lifestyleLabel = document.createElement('label');
+  lifestyleLabel.classList.add('lifestyle-label');
   lifestyleLabel.textContent = 'Lifestyle:';
   const lifestyleInput = document.createElement('select');
+  lifestyleInput.classList.add('lifestyle-input');
   const lifestyleOptions = [
     'Barebones',
     'Frugal',
@@ -56,7 +63,7 @@ export default function form() {
     };
 
     fetch(
-      `https://api.geoapify.com/v1/geocode/autocomplete?text=${locationInput.value}&apiKey=908271eda86c4e83bffeab2a3aa89f0f`,
+      `https://api.geoapify.com/v1/geocode/autocomplete?text=${locationInput.value}&apiKey=1bd28e13d8a9480db0b531811a8896c0`,
       requestOptions,
     )
       .then((response) => response.json())
@@ -102,6 +109,12 @@ export default function form() {
   const submitButton = document.createElement('button');
   submitButton.classList.add('submit-btn');
   submitButton.textContent = 'Calculate';
+  submitButton.onclick = function (e) {
+    e.preventDefault();
+    const resultsDiv = document.getElementsByClassName('results')[0];
+    resultsDiv.innerHTML = '';
+    resultsDiv.appendChild(results());
+  };
   container.appendChild(submitButton);
 
   return container;

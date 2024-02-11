@@ -11,5 +11,9 @@ export default function mainContent() {
 
   container.appendChild(form());
 
+  const results = document.createElement('div');
+  results.classList.add('results');
+  container.appendChild(results);
+
   return container;
 }
