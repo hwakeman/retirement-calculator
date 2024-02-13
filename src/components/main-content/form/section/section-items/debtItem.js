@@ -1,11 +1,13 @@
 export default function debtItem() {
   const container = document.createElement('div');
   container.classList.add('item');
-  container.classList.add('income-item');
+  container.classList.add('debt-item');
 
   const balanceLabel = document.createElement('label');
+  balanceLabel.classList.add('amount-label');
   balanceLabel.textContent = 'Balance: ';
   const balanceInput = document.createElement('input');
+  balanceInput.classList.add('amount-input');
   balanceInput.type = 'number';
   balanceLabel.appendChild(balanceInput);
 

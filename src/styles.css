@@ -38,6 +38,10 @@ main {
     font-size: 1.2rem;
 }
 
+.description {
+    text-align: center;
+}
+
 .retirement-form {
     display: flex;
     flex-direction: column;

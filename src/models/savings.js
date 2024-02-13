@@ -49,4 +49,17 @@ export default class savings {
     }
     this.taxAdvantaged = taxAdvantaged;
   }
+
+  getFutureValue(yearsInTheFuture) {
+    let totalAccrued = this.getAmount();
+    for (let i = 0; i < yearsInTheFuture; i += 1) {
+      const averageInAccount = totalAccrued + this.getMonthlyContribution() * 6;
+      totalAccrued += averageInAccount * (1 + this.getExpectedReturn() / 100);
+      totalAccrued += this.getMonthlyContribution() * 12;
+    }
+    if (!this.getTaxAdvantaged()) {
+      totalAccrued -= 0.85 * (totalAccrued - this.getAmount());
+    }
+    return totalAccrued;
+  }
 }

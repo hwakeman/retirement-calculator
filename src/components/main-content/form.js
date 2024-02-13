@@ -16,6 +16,16 @@ export default function form() {
   ageLabel.appendChild(ageInput);
   container.appendChild(ageLabel);
 
+  const ageToLiveToLabel = document.createElement('label');
+  ageToLiveToLabel.classList.add('age-to-live-to-label');
+  ageToLiveToLabel.textContent = 'Desired Age to live to:';
+  const ageToLiveToInput = document.createElement('input');
+  ageToLiveToInput.classList.add('age-to-live-to-input');
+  ageToLiveToInput.type = 'number';
+  ageToLiveToInput.max = 130;
+  ageToLiveToLabel.appendChild(ageToLiveToInput);
+  container.appendChild(ageToLiveToLabel);
+
   const expectedInflationLabel = document.createElement('label');
   expectedInflationLabel.classList.add('expected-inflation-label');
   expectedInflationLabel.textContent = 'Expected Inflation Rate:';
